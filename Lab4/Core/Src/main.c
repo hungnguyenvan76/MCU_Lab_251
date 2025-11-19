@@ -95,6 +95,8 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  SCH_Add_Task(timerRun,          0, 1);
+  SCH_Add_Task(getKeyInput,       0, 1);
   SCH_Add_Task(fsm_automatic_run, 0, 1);
   SCH_Add_Task(fsm_manual_run,    0, 1);
   SCH_Add_Task(fsm_config_run,    0, 1);
@@ -246,8 +248,6 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
 	SCH_Update();
-	timerRun();
-	getKeyInput();
 }
 void display7SEG(int num) {
     if (num < 0 || num > 9) return;

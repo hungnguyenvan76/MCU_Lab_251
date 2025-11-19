@@ -20,7 +20,7 @@ int isTimerExpire(int index) {
 	}
 	return 0;
 }
-void timerRun() {
+void timerRun(void) {
 	for (int i = 0; i < MAX_TIMER; ++i) {
 		if (timer_counter >= 0) {
 			timer_counter[i]--;
