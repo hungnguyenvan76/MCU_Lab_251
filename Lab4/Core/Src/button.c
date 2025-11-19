@@ -27,7 +27,7 @@ int isButtonPressed(int index){
 }
 
 //------------------------
-void getKeyInput(){
+void getKeyInput(void){
 	for(int i = 0; i < NUM_OF_BUTTONS; i++){
 		KeyReg2[i] = KeyReg1[i];
 		KeyReg1[i] = KeyReg0[i];
